@@ -4,7 +4,6 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import controller.ManagerController;
-import dto.InstructorDTO;
 import dto.ManagerDTO;
 
 public class ManagerView implements ViewInterface {
@@ -22,8 +21,7 @@ public class ManagerView implements ViewInterface {
 		managerCtrl.allManager();
 	}
 
-	public void selectView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void selectView(Scanner sc) throws NoSuchElementException {
 		System.out.println("조회할 담당자의 이름 검색:");
 		String managerName = sc.nextLine();
 		System.out.println("──────────────────────────────────────────────────────────────────");
@@ -32,8 +30,7 @@ public class ManagerView implements ViewInterface {
 		System.out.println();
 	}
 
-	public void updateView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void updateView(Scanner sc) throws NoSuchElementException {
 		System.out.println("담당자의 정보를 업데이트합니다.");
 		System.out.println("담당자의 id를 입력해주세요:");
 
@@ -42,12 +39,12 @@ public class ManagerView implements ViewInterface {
 
 		if (manager != null) {
 			String managerInput = null; // 이름 or 전화번호 수정
-			
+
 			System.out.println();
 			System.out.println("1. 이름");
 			System.out.println("2. 전화번호");
 			System.out.println();
-			
+
 			int managerInner = sc.nextInt();
 			sc.nextLine();
 
@@ -64,8 +61,7 @@ public class ManagerView implements ViewInterface {
 		}
 	}
 
-	public void insertView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void insertView(Scanner sc) throws NoSuchElementException {
 		int defaultManagerId = 0;
 		System.out.println("새로운 담당자를 추가합니다.");
 //		System.out.println("강사의 id를 입력해주세요:");
@@ -78,8 +74,7 @@ public class ManagerView implements ViewInterface {
 		managerCtrl.insertManager(new ManagerDTO(defaultManagerId, managerName, managerPhone));
 	}
 
-	public void deleteView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void deleteView(Scanner sc) throws NoSuchElementException {
 		System.out.println("삭제할 담당자의 id를 입력해주세요:");
 		int managerId = sc.nextInt();
 		sc.nextLine();

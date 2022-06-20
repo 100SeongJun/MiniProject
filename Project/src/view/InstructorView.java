@@ -22,8 +22,7 @@ public class InstructorView implements ViewInterface {
 		instructorCtrl.allInstructor();
 	}
 
-	public void selectView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void selectView(Scanner sc) throws NoSuchElementException {
 		System.out.println("조회할 강사의 이름 검색:");
 		String instructorName = sc.nextLine();
 		System.out.println("──────────────────────────────────────────────────────────────────");
@@ -32,8 +31,7 @@ public class InstructorView implements ViewInterface {
 		System.out.println();
 	}
 
-	public void updateView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void updateView(Scanner sc) throws NoSuchElementException {
 		System.out.println("강사의 정보를 업데이트합니다.");
 		System.out.println("강사의 id를 입력해주세요:");
 
@@ -42,12 +40,12 @@ public class InstructorView implements ViewInterface {
 
 		if (instructor != null) {
 			String instructorInput = null; // 이름 or 전화번호 수정
-			
+
 			System.out.println();
 			System.out.println("1. 이름");
 			System.out.println("2. 전화번호");
 			System.out.println();
-			
+
 			int instructorInner = sc.nextInt();
 			sc.nextLine();
 
@@ -56,7 +54,6 @@ public class InstructorView implements ViewInterface {
 			} else if (instructorInner == 2) {
 				System.out.println("전화번호를 입력해주세요:");
 			}
-			
 
 			instructorInput = sc.nextLine(); // 이름 or 전화번호
 			instructorCtrl.updateInstructor(instructor, instructorInner, instructorInput);
@@ -66,8 +63,7 @@ public class InstructorView implements ViewInterface {
 		}
 	}
 
-	public void insertView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void insertView(Scanner sc) throws NoSuchElementException {
 		int defaultInstructorId = 0;
 		System.out.println("새로운 강사를 추가합니다.");
 //		System.out.println("강사의 id를 입력해주세요:");
@@ -83,8 +79,7 @@ public class InstructorView implements ViewInterface {
 		instructorCtrl.insertInstructor(new InstructorDTO(defaultInstructorId, instructorName, instructorPhone));
 	}
 
-	public void deleteView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void deleteView(Scanner sc) throws NoSuchElementException {
 		System.out.println("삭제할 강사의 id를 입력해주세요:");
 		int instructorId = sc.nextInt();
 		sc.nextLine();

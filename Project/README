@@ -1,7 +1,8 @@
 Package 분류
 
 View : 콘솔창 결과 출력
-	- StartView : 첫 화면 
+	- StartView : 첫 화면 (메인) 
+	- SecondView : 각 동작에 대한 subView
 	- EndView : 특정 결과 출력
 	- SuccessView : 동작성공여부 결과출력
 
@@ -11,20 +12,16 @@ Model : DAO(Data Access Object) DB접근 로직
 
 DTO(Data Transfer Object) : DB접근을 위한 생성자
 	
-
-	
-
-	
 - 활용가능한 방법 : 
-View 기능에 대한 메소드들은 interface를 통해 상속받으면 도움이 됨(중복되는 부분이 많음)
-ex) CRUD View에 대한 것들.
-
-
-Interface의 사용가능영역
-- Controller
-- Service
-- View 
-
+Interface : 
+	View 기능에 대한 메소드들은 interface를 통해 상속받으면 도움이 됨(중복되는 부분이 많음)
+	ex) CRUD View에 대한 것들.
+	
+	Interface의 사용가능영역
+	- Controller
+	- Service
+	- View 
+	
 Student, Manager, Instructor의 중복되는 부분이 많이 존재함
 (인터페이스를 통해 구현가능)
 
@@ -40,23 +37,7 @@ Student, Manager, Instructor의 중복되는 부분이 많이 존재함
 
 ************************************		
 - 급여 조회 시 지각 횟수 출력
-
-
-
-
 ************************************		
-
-
-
-
-
-
-
-
-
-
-
-
 
 검색정보 1 - 아이디:3 이름:곽예영 나이:26 전화번호:010-0000-0000
 주소:동래구 좌석:JKYD03 지각:0 결석:0 담당자번호:0

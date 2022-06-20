@@ -22,8 +22,7 @@ public class CourseView {
 		System.out.println();
 	}
 
-	public void insertView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void insertView(Scanner sc) throws NoSuchElementException {
 		System.out.println("강의 이름을 입력하세요: ");
 		System.out.println("(최대 10글자)");
 		String courseName = sc.next();
@@ -41,8 +40,7 @@ public class CourseView {
 
 	}
 
-	public void selectView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void selectView(Scanner sc) throws NoSuchElementException {
 		System.out.println("조회할 강의 이름 검색: ");
 		String courseName = sc.nextLine();
 		System.out.println("───────────────────────────────────────────────────────────────────────────────────");
@@ -51,8 +49,7 @@ public class CourseView {
 		System.out.println();
 	}
 
-	public void updateView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void updateView(Scanner sc) throws NoSuchElementException {
 		String modify;
 		System.out.println("강의 정보를 업데이트 합니다.");
 		System.out.println("강의 id를 입력해 주세요.");
@@ -87,8 +84,7 @@ public class CourseView {
 		}
 	}
 
-	public void deleteView() throws NoSuchElementException {
-		Scanner sc = new Scanner(System.in);
+	public void deleteView(Scanner sc) throws NoSuchElementException {
 		System.out.println("강의 id를 입력하세요: ");
 		System.out.println();
 		int courseId = sc.nextInt();
